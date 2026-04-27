@@ -25,6 +25,14 @@ console.log(
   products.getProductById(products.getItems()[0].id),
 );
 
+// Установка выбранного товара
+products.setSelectedProduct(products.getItems()[0]);
+console.log("Выбранный товар:", products.getSelectedProduct());
+
+// Очистка выбранного товара
+products.clearSelectedProduct();
+console.log("Выбранный товар после очистки:", products.getSelectedProduct());
+
 // Тесты для Basket
 
 // Добавление в корзину
@@ -72,7 +80,12 @@ buyer.clear();
 console.log("Данные покупателя после очистки:", buyer.getData());
 
 // Работа с сервером - получение каталога и вывод в консоль
-apiService.getProducts().then((data) => {
-  products.setItems(data.items);
-  console.log("Каталог товаров с сервера:", products.getItems());
-});
+apiService
+  .getProducts()
+  .then((data) => {
+    products.setItems(data.items);
+    console.log("Каталог товаров с сервера:", products.getItems());
+  })
+  .catch((error) => {
+    console.error("Ошибка при получении каталога:", error);
+  });

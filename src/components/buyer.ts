@@ -1,4 +1,5 @@
 import { IBuyer } from "../types/index.ts";
+import { BuyerErrors } from "../types/index.ts";
 
 export class Buyer {
   private payment: IBuyer["payment"] = "";
@@ -40,8 +41,8 @@ export class Buyer {
     this.phone = "";
   }
 
-  public validate(): Partial<Record<keyof IBuyer, string>> {
-    const errors: Partial<Record<keyof IBuyer, string>> = {};
+  public validate(): BuyerErrors {
+    const errors: BuyerErrors = {};
 
     if (!this.payment) {
       errors.payment = "Выберите способ оплаты";
