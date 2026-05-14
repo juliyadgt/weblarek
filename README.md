@@ -117,7 +117,7 @@ Presenter - презентер содержит основную логику п
 ##### тип BuyerErrors = Partial<Record<keyof IBuyer, string>>:
 Хранит единый тип для валидации ошибки при обработке данных, вводимых пользователем. 
 
-##### тип export type Tpayment = "card" | "cash" | "";
+##### тип export type Tpayment = "card" | "cash" ;
 Хранит единый тип с доступными вариантами оплаты. 
 
 ##### Интерфейс Iproduct:

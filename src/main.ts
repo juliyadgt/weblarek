@@ -29,9 +29,8 @@ console.log(
 products.setSelectedProduct(products.getItems()[0]);
 console.log("Выбранный товар:", products.getSelectedProduct());
 
-// Очистка выбранного товара
-products.clearSelectedProduct();
-console.log("Выбранный товар после очистки:", products.getSelectedProduct());
+// Очистка выб
+products.setSelectedProduct(null);
 
 // Тесты для Basket
 

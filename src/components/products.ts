@@ -16,15 +16,11 @@ export class Products {
     return this.items.find((item) => item.id === id);
   }
 
-  public setSelectedProduct(product: IProduct): void {
+  public setSelectedProduct(product: IProduct | null): void {
     this.selectedProduct = product;
   }
 
   public getSelectedProduct(): IProduct | null {
     return this.selectedProduct;
-  }
-
-  public clearSelectedProduct(): void {
-    this.selectedProduct = null;
   }
 }

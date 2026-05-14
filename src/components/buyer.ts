@@ -1,8 +1,9 @@
 import { IBuyer } from "../types/index.ts";
 import { BuyerErrors } from "../types/index.ts";
+import { Tpayment } from "../types/index.ts";
 
 export class Buyer {
-  private payment: IBuyer["payment"] = "";
+  private payment: Tpayment | "" = "";
   private address: string = "";
   private email: string = "";
   private phone: string = "";
@@ -27,7 +28,7 @@ export class Buyer {
 
   public getData(): IBuyer {
     return {
-      payment: this.payment,
+      payment: this.payment as Tpayment,
       address: this.address,
       email: this.email,
       phone: this.phone,

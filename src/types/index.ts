@@ -1,6 +1,6 @@
 export type ApiPostMethods = "POST" | "PUT" | "DELETE";
 export type BuyerErrors = Partial<Record<keyof IBuyer, string>>;
-export type Tpayment = "card" | "cash" | "";
+export type Tpayment = "card" | "cash";
 
 export interface IApi {
   get<T extends object>(uri: string): Promise<T>;
